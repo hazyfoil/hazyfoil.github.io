@@ -1,0 +1,1022 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="springmvc学习笔记-springmvc开发小结, 长夜有星辰">
+    <meta name="description" content="本文对springmvc系列博文进行小结
+springmvc框架
+
+DispatcherServlet前端控制器：接收request，进行response
+HandlerMapping处理器映射器：根据url查找Handler。（可以通过x">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>springmvc学习笔记-springmvc开发小结 | 长夜有星辰</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">长夜有星辰</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">长夜有星辰</div>
+        <div class="logo-desc">
+            
+            夜空中最亮的星、能否听清、那遥远的人心里的孤独和叹息
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://hazyfoil.github.io/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://hazyfoil.github.io/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/resource/article/images/springMVC/springMVC_17.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        springmvc学习笔记-springmvc开发小结
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/SpringMVC/" target="_blank">
+                    <span class="chip bg-color">SpringMVC</span>
+                </a>
+                
+                <a href="/tags/Spring/" target="_blank">
+                    <span class="chip bg-color">Spring</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                <!--<span class="post-cate" style="margin-right: 0px">-->
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/开源框架/" class="post-category" target="_blank">
+                        开源框架
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2017-06-27
+                </span>
+				
+				
+                    <span id="busuanzi_container_page_pv" class="post-read">
+                    <i class="fa fa-eye fa-fw"></i>阅读 <span id="busuanzi_value_page_pv"></span>
+				
+            </span></div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本文对springmvc系列博文进行小结</p>
+<h2 id="springmvc框架"><a href="#springmvc框架" class="headerlink" title="springmvc框架"></a>springmvc框架</h2><p><img src="https://hazyfoil.github.io/resource/content/images/springMVC/SpringMVC架构.png" alt="springmvc_核心架构图"></p>
+<ul>
+<li><code>DispatcherServlet</code>前端控制器：接收request，进行response</li>
+<li><strong><code>HandlerMapping</code>处理器映射器</strong>：根据url查找Handler。（可以通过xml配置方式，注解方式）</li>
+<li><strong><code>HandlerAdapter</code>处理器适配器</strong>：根据特定规则去执行Handler，编写Handler时需要按照HandlerAdapter的要求去编写。</li>
+<li><strong><code>Handler</code>处理器</strong>（后端控制器）：需要程序员去编写，<strong>常用注解开发方式</strong>。<ul>
+<li>Handler处理器执行后结果是<code>ModelAndView</code>，具体开发时<code>Handler</code>返回方法值类型包括：<code>ModelAndView</code>、<code>String</code>（逻辑视图名）、<code>void</code>（通过在Handler形参中添加request和response，类似原始 servlet开发方式，注意：可以通过指定response响应的结果类型实现json数据输出）</li>
+</ul>
+</li>
+<li><code>View Resolver</code>视图解析器：根据逻辑视图名生成真正的视图（在springmvc中使用View对象表示）</li>
+<li><code>View</code>视图：jsp页面，仅是数据展示，没有业务逻辑。</li>
+</ul>
+<h2 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h2><h3 id="使用注解方式的处理器映射器和适配器"><a href="#使用注解方式的处理器映射器和适配器" class="headerlink" title="使用注解方式的处理器映射器和适配器"></a>使用注解方式的处理器映射器和适配器</h3><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--注解映射器 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment" spellcheck="true">&lt;!--注解适配器 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+<p>在实际开发，使用<code>&lt;mvc:annotation-driven&gt;</code>代替上边处理器映射器和适配器配置。</p>
+<ul>
+<li><code>@controller</code>注解必须要加，作用标识类是一个Handler处理器。</li>
+<li><code>@requestMapping</code>注解必须要加，作用：<ul>
+<li>1、对url和Handler的<strong>方法</strong>进行映射。</li>
+<li>2、可以窄化请求映射，设置Handler的根路径，url就是根路径+子路径请求方式</li>
+<li>3、可以限制http请求的方法</li>
+</ul>
+</li>
+</ul>
+<p>映射成功后，springmvc框架生成一个Handler对象，对象中只包括 一个映射成功的method。</p>
+<h3 id="注解开发中参数绑定"><a href="#注解开发中参数绑定" class="headerlink" title="注解开发中参数绑定"></a>注解开发中参数绑定</h3><p>将request请求过来的key/value的数据（理解一个串），通过转换（参数绑定的一部分），将key/value串转成形参，将转换后的结果传给形参（整个参数绑定过程）。</p>
+<p>springmvc所支持参数绑定：</p>
+<ul>
+<li>1、默认支持很多类型：<code>HttpServletRequest</code>、<code>response</code>、<code>session</code>、<code>model/modelMap</code>(将模型数据填充到request域)</li>
+<li>2、支持简单数据类型，整型、字符串、日期..等<ul>
+<li>只要保证request请求的参数名和形参名称一致，自动绑定成功</li>
+<li>如果request请求的参数名和形参名称不一致，可以使用<code>@RequestParam</code>（指定request请求的参数名），<code>@RequestParam</code>加在形参的前边。</li>
+</ul>
+</li>
+<li>3、支持pojo类型<ul>
+<li>只要保证request请求的参数名称和pojo中的属性名一致，自动将request请求的参数设置到pojo的属性中。</li>
+</ul>
+</li>
+<li>4、包装类型pojo参数绑定<ul>
+<li>第一种方法：在形参中添加<code>HttpServletRequest request</code>参数，通过request接收查询条件参数。</li>
+<li>第二种方法：在形参中让包装类型的pojo接收查询条件参数。</li>
+</ul>
+</li>
+<li>5、集合类型参数绑定<ul>
+<li>数组绑定：方法形参使用数组接收页面请求的多个参数</li>
+<li>list绑定：使用List接收页面提交的批量数据，通过包装pojo接收，在包装pojo中定义list<pojo>属性</pojo></li>
+<li>map绑定：在包装类中定义Map对象，并添加<code>get/set</code>方法，action使用包装对象接收</li>
+</ul>
+</li>
+</ul>
+<p><em>注意：形参中即有pojo类型又有简单类型，参数绑定互不影响。</em></p>
+<p>自定义参数绑定</p>
+<ul>
+<li>日期类型绑定自定义：</li>
+</ul>
+<p>定义的<code>Converter&lt;源类型，目标类型&gt;</code>接口实现类，比如：<code>Converter&lt;String,Date&gt;</code>,表示：将请求的日期数据串转成java中的日期类型。</p>
+<p><em>注意：要转换的目标类型一定和接收的pojo中的属性类型一致。</em></p>
+<p>将定义的Converter实现类注入到处理器适配器中。</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>annotation-driven</span> <span class="token attr-name">conversion-service</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>conversionService<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">mvc:</span>annotation-driven</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- conversionService --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>conversionService<span class="token punctuation">"</span></span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.format.support.FormattingConversionServiceFactoryBean<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 转换器 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>converters<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cn.itcast.ssm.controller.converter.CustomDateConverter<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="springmvc和struts2区别"><a href="#springmvc和struts2区别" class="headerlink" title="springmvc和struts2区别"></a>springmvc和struts2区别</h3><p>springmvc面向方法开发的（更接近service接口的开发方式），struts2面向类开发。</p>
+<p>springmvc可以单例开发，struts2只能是多例开发。</p>
+<h2 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h2><p>服务端校验：</p>
+<ul>
+<li>控制层conroller：校验页面请求的参数的合法性。在服务端控制层conroller校验，不区分客户端类型（浏览器、手机客户端、远程调用）</li>
+<li>业务层service（使用较多）：主要校验关键业务参数，仅限于service接口中使用的参数。</li>
+<li>持久层dao：一般是不校验的。</li>
+</ul>
+<p>一般使用hibernate的校验框架，依赖<code>hibernate-validator.jar</code>,<code>jboss-logging.jar</code>,<code>validation-api.jar</code>这几个jar包</p>
+<p>开发步骤</p>
+<ul>
+<li>在springmvc.xml中添加校验器</li>
+<li>校验器注入到处理器适配器中</li>
+<li>在CustomValidationMessages.properties配置校验错误信息</li>
+<li>在pojo中添加校验规则</li>
+<li>在控制器中对参数注解<code>@Validated</code>来捕获和显示校验错误信息</li>
+</ul>
+<p>分组校验</p>
+<ul>
+<li>定义校验分组</li>
+<li>在校验规则中添加分组</li>
+<li>在controller方法使用指定分组的校验</li>
+</ul>
+<h2 id="数据回显"><a href="#数据回显" class="headerlink" title="数据回显"></a>数据回显</h2><p>数据回显有三种方法</p>
+<ul>
+<li>1.springmvc默认对pojo数据进行回显。<ul>
+<li>pojo数据传入controller方法后，springmvc自动将pojo数据放到request域，key等于pojo类型（首字母小写）</li>
+<li>使用<code>@ModelAttribute</code>指定pojo回显到页面在request中的key</li>
+</ul>
+</li>
+<li>2.<code>@ModelAttribute</code>还可以将方法的返回值传到页面</li>
+<li>3.使用最简单方法使用model，可以不用<code>@ModelAttribute</code></li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>系统的dao、service、controller出现都通过throws Exception向上抛出，最后由springmvc前端控制器交由异常处理器进行异常处理。</p>
+<p>springmvc提供全局异常处理器（一个系统只有一个异常处理器）进行统一异常处理。</p>
+<p>全局异常处理器处理思路：</p>
+<p>解析出异常类型</p>
+<ul>
+<li>如果该异常类型是系统自定义的异常，直接取出异常信息，在错误页面展示</li>
+<li>如果该异常类型不是系统自定义的异常，构造一个自定义的异常类型（信息为“未知错误”）</li>
+</ul>
+<p>抛出异常的位置</p>
+<ul>
+<li>如果与业务功能相关的异常，建议在service中抛出异常。</li>
+<li>与业务功能没有关系的异常，建议在controller中抛出。</li>
+</ul>
+<h2 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h2><p>开发步骤</p>
+<ul>
+<li>在页面form中提交enctype=”multipart/form-data”的数据时，需要springmvc对multipart类型的数据进行解析。</li>
+<li>在springmvc.xml中配置multipart类型解析器</li>
+<li>加入上传图片的jar：<code>commons-fileupload</code></li>
+<li>创建图片虚拟目录存储图片</li>
+</ul>
+<h2 id="json数据交互"><a href="#json数据交互" class="headerlink" title="json数据交互"></a>json数据交互</h2><p>两种json数据交互的形式：</p>
+<ul>
+<li>请求json、输出json，要求请求的是json串，所以在前端页面中需要将请求的内容转成json，不太方便。</li>
+<li>请求key/value、输出json。此方法比较常用。</li>
+</ul>
+<p>需要的依赖：</p>
+<ul>
+<li><code>jackson-databind</code></li>
+<li><code>jackson-mapper-asl</code></li>
+</ul>
+<p>在注解适配器中加入<code>messageConverters</code></p>
+<pre class=" language-xml"><code class="language-xml">
+<span class="token comment" spellcheck="true">&lt;!--注解适配器 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>messageConverters<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.http.converter.json.MappingJacksonHttpMessageConverter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+</code></pre>
+<p><strong>注意：如果使用<code>&lt;mvc:annotation-driven /&gt;</code>则不用定义上边的内容。</strong></p>
+<p>在controller的返回值上加注解<code>@ResponseBody</code>来将java对象输出json，返回json格式数据</p>
+<h2 id="RESTful支持"><a href="#RESTful支持" class="headerlink" title="RESTful支持"></a>RESTful支持</h2><p><code>@RequestMapping(value=&quot;/ itemsView/{id}&quot;)</code>：<code>{×××}</code>占位符，请求的URL可以是<code>/viewItems/1</code>或<code>/viewItems/2</code>，通过在方法中使用<code>@PathVariable</code>获取{×××}中的×××变量。<code>@PathVariable</code>用于将请求URL中的模板变量映射到功能处理方法的参数上。</p>
+<p>如果<code>@RequestMapping</code>中表示为<code>/itemsView/{id}</code>，id和形参名称一致，<code>@PathVariable</code>不用指定名称。</p>
+<p>同时需要配置前端控制器。若要访问静态资源，还需在springmvc.xml中添加静态资源解析方法,如<code>&lt;mvc:resources location=&quot;/js/&quot; mapping=&quot;/js/**&quot;/&gt;</code></p>
+<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><h3 id="拦截器定义"><a href="#拦截器定义" class="headerlink" title="拦截器定义"></a>拦截器定义</h3><p>定义拦截器，实现<code>HandlerInterceptor</code>接口。接口中提供三个方法。可以从名称和参数看出各个接口的顺序和作用</p>
+<ul>
+<li><code>public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception</code><ul>
+<li>参数最少，只有三个</li>
+<li>进入 Handler方法之前执行</li>
+<li>用于身份认证、身份授权。比如身份认证，如果认证通过表示当前用户没有登陆，需要此方法拦截不再向下执行</li>
+</ul>
+</li>
+<li><code>public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception</code><ul>
+<li>多了一个modelAndView参数</li>
+<li>进入Handler方法之后，返回modelAndView之前执行 </li>
+<li>应用场景从modelAndView出发：将公用的模型数据(比如菜单导航)在这里传到视图，也可以在这里统一指定视图</li>
+</ul>
+</li>
+<li><code>public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception</code><ul>
+<li>多了一个Exception的类型的参数</li>
+<li>执行Handler完成执行此方法</li>
+<li>应用场景：统一异常处理，统一日志处理</li>
+</ul>
+</li>
+</ul>
+<h3 id="拦截器的配置"><a href="#拦截器的配置" class="headerlink" title="拦截器的配置"></a>拦截器的配置</h3><ul>
+<li>针对HandlerMapping配置(一般不推荐)<ul>
+<li>springmvc拦截器针对HandlerMapping进行拦截设置，如果在某个HandlerMapping中配置拦截，经过该HandlerMapping映射成功的handler最终使用该拦截器 </li>
+</ul>
+</li>
+<li>类似全局的拦截器<ul>
+<li>springmvc配置类似全局的拦截器，springmvc框架将配置的类似全局的拦截器注入到每个HandlerMapping中。 </li>
+</ul>
+</li>
+</ul>
+<h3 id="拦截器测试及其应用"><a href="#拦截器测试及其应用" class="headerlink" title="拦截器测试及其应用"></a>拦截器测试及其应用</h3><p>链式执行测试</p>
+<ul>
+<li>两个拦截器都放行<ul>
+<li>preHandle方法按顺序执行，postHandle和afterCompletion按拦截器配置的逆向顺序执行</li>
+</ul>
+</li>
+<li>拦截器1放行，拦截器2不放行<ul>
+<li>拦截器1放行，拦截器2 preHandle才会执行。</li>
+<li>拦截器2 preHandle不放行，拦截器2 postHandle和afterCompletion不会执行。</li>
+<li>只要有一个拦截器不放行，postHandle不会执行。</li>
+</ul>
+</li>
+<li>两个拦截器都不放 <ul>
+<li>拦截器1 preHandle不放行，postHandle和afterCompletion不会执行。</li>
+<li>拦截器1 preHandle不放行，拦截器2不执行。</li>
+</ul>
+</li>
+</ul>
+<p>应用</p>
+<ul>
+<li>统一日志处理拦截器，需要该拦截器preHandle一定要放行，且将它放在拦截器链接中第一个位置。</li>
+<li>登陆认证拦截器，放在拦截器链接中第一个位置。权限校验拦截器，放在登陆认证拦截器之后。（因为登陆通过后才校验权限，当然登录认证拦截器要放在统一日志处理拦截器后面）</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://github.com/hazyfoil" class="b-link-green">长夜有星辰</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2017/06/27/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-22-springmvc-kai-fa-xiao-jie/" class="b-link-green">springmvc学习笔记-springmvc开发小结</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2017/06/27/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-20-lan-jie-qi/">
+                    <div class="card-image">
+                        
+                        <img src="/resource/article/images/springMVC/springMVC_16.jpg" class="responsive-img" alt="springmvc学习笔记-拦截器">
+                        
+                        <span class="card-title">springmvc学习笔记-拦截器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">本文主要介绍springmvc中的拦截器，包括拦截器定义和的配置，然后演示了一个链式拦截的测试示例，最后通过一个登录认证的例子展示了拦截器的应用
+拦截定义定义拦截器，实现HandlerInterceptor接口。接口中提供三个方法。
+pub</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/开源框架/" class="post-category" target="_blank">
+                                    开源框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringMVC/" target="_blank">
+                        <span class="chip bg-color">SpringMVC</span>
+                    </a>
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2017/06/27/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-21-springmvc-zheng-he-mybatis-yu-dao-de-wen-ti-ji-jie-jue-xiao-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="springmvc学习笔记-springmvc整合mybatis遇到的问题及解决小结">
+                        
+                        <span class="card-title">springmvc学习笔记-springmvc整合mybatis遇到的问题及解决小结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">本文主要记录springmvc整合mybatis整合过程中遇到的各种问题和解决方法
+遇到的问题在web.xml中&lt;listener-class&gt;标签报红参考：
+
+web.xml listener-class is not all</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/开源框架/" class="post-category" target="_blank">
+                                    开源框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringMVC/" target="_blank">
+                        <span class="chip bg-color">SpringMVC</span>
+                    </a>
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+		树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
+		芳华依然。只要生命还握在手心，人生就没有绝望
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src="/js/index.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
