@@ -275,7 +275,7 @@ mybatis托管到g">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://hazyfoil.github.io/resource/article/images/mybatis/mybatis-1.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/resource/article/images/mybatis/mybatis-1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -429,17 +429,17 @@ mybatis托管到g">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本文对mybatis做一个简单介绍，包括框架原理，执行过程，开发方法，输入输出映射以及动态sql,我会在后续的系列文章中一一详细说明</p>
-<h2 id="mybatis-介绍"><a href="#mybatis-介绍" class="headerlink" title="mybatis 介绍"></a>mybatis 介绍</h2><p><img src="https://hazyfoil.github.io/resource/content/images/mybatis/mybatis架构图.jpg" alt="mybatis架构图"><br>mybatis是一个持久层的框架，是apache下的顶级项目。</p>
+<h2 id="mybatis-介绍"><a href="#mybatis-介绍" class="headerlink" title="mybatis 介绍"></a>mybatis 介绍</h2><p><img src="/resource/content/images/mybatis/mybatis架构图.jpg" alt="mybatis架构图"><br>mybatis是一个持久层的框架，是apache下的顶级项目。</p>
 <p>mybatis托管到goolecode下，再后来托管到github下(<a href="https://github.com/mybatis/mybatis-3/releases)。">https://github.com/mybatis/mybatis-3/releases)。</a></p>
 <p>mybatis让程序将主要精力放在sql上，通过mybatis提供的映射方式，自由灵活生成（半自动化，大部分需要程序员编写sql）满足需要sql语句。</p>
 <p>mybatis可以将向 preparedStatement中的输入参数自动进行输入映射，将查询结果集灵活映射成java对象。（输出映射）</p>
 <h2 id="框架原理"><a href="#框架原理" class="headerlink" title="框架原理"></a>框架原理</h2><p>mybatis框架</p>
-<p><img src="https://hazyfoil.github.io/resource/content/images/mybatis/mybatis框架图.png" alt="mybatis框架图"><br><img src="https://hazyfoil.github.io/resource/content/images/mybatis/mybatis层次结构.png" alt="mybatis层次结构图"></p>
+<p><img src="/resource/content/images/mybatis/mybatis框架图.png" alt="mybatis框架图"><br><img src="/resource/content/images/mybatis/mybatis层次结构.png" alt="mybatis层次结构图"></p>
 <h2 id="mybatis框架执行过程"><a href="#mybatis框架执行过程" class="headerlink" title="mybatis框架执行过程"></a>mybatis框架执行过程</h2><p>1、配置mybatis的配置文件，SqlMapConfig.xml（名称不固定）</p>
 <p>2、通过配置文件，加载mybatis运行环境，创建SqlSessionFactory会话工厂(SqlSessionFactory在实际使用时按单例方式)</p>
 <p>3、通过SqlSessionFactory创建SqlSession。SqlSession是一个面向用户接口（提供操作数据库方法），实现对象是线程不安全的，建议sqlSession应用场合在方法体内。</p>
 <p>4、调用sqlSession的方法去操作数据。如果需要提交事务，需要执行SqlSession的commit()方法。</p>
-<p>5、释放资源，关闭SqlSession<br><img src="https://hazyfoil.github.io/resource/content/images/mybatis/mybatis执行流程.png" alt="mybatis执行流程图"></p>
+<p>5、释放资源，关闭SqlSession<br><img src="/resource/content/images/mybatis/mybatis执行流程.png" alt="mybatis执行流程图"></p>
 <h2 id="mybatis开发dao的方法"><a href="#mybatis开发dao的方法" class="headerlink" title="mybatis开发dao的方法"></a>mybatis开发dao的方法</h2><p>1.原始dao 的方法</p>
 <ul>
 <li>需要程序员编写dao接口和实现类</li>
@@ -645,7 +645,7 @@ mybatis托管到g">
                 <a href="/2015/08/08/kai-yuan-kuang-jia/mybatis/mybatis-xue-xi-bi-ji-3-ru-men-cheng-xu-er/">
                     <div class="card-image">
                         
-                        <img src="https://hazyfoil.github.io/resource/article/images/mybatis/mybatis-4.jpg" class="responsive-img" alt="mybatis学习笔记之入门程序二">
+                        <img src="/resource/article/images/mybatis/mybatis-4.jpg" class="responsive-img" alt="mybatis学习笔记之入门程序二">
                         
                         <span class="card-title">mybatis学习笔记之入门程序二</span>
                     </div>
@@ -698,7 +698,7 @@ User.xml,在入门程序一基础上增加
                 <a href="/2015/08/06/kai-yuan-kuang-jia/mybatis/mybatis-xue-xi-bi-ji-1-dui-yuan-sheng-jdbc-cheng-xu-zhong-de-wen-ti-zong-jie/">
                     <div class="card-image">
                         
-                        <img src="https://hazyfoil.github.io/resource/article/images/mybatis/jdbc.jpg" class="responsive-img" alt="mybatis学习笔记之对原生jdbc程序中的问题总结">
+                        <img src="/resource/article/images/mybatis/jdbc.jpg" class="responsive-img" alt="mybatis学习笔记之对原生jdbc程序中的问题总结">
                         
                         <span class="card-title">mybatis学习笔记之对原生jdbc程序中的问题总结</span>
                     </div>

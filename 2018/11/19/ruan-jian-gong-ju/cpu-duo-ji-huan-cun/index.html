@@ -273,7 +273,7 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181118.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/devops/20181118.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,7 +474,7 @@
 </tbody>
 </table>
 <p>下图是Intel Core i5-4285U的CPU三级缓存示意图：</p>
-<p><img src="http://static.blinkfox.com/javabf_cpu_01.png" alt="CPU三级缓存"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_01.png" alt="CPU三级缓存"></p>
 <p>就像数据库缓存一样，获取数据时首先会在最快的缓存中找数据，如果缓存没有命中(Cache miss) 则往下一级找, 直到三级缓存都找不到时，那只有向内存要数据了。一次次地未命中，代表取数据消耗的时间越长。</p>
 <h3 id="2-带有高速缓存CPU执行计算的流程"><a href="#2-带有高速缓存CPU执行计算的流程" class="headerlink" title="2. 带有高速缓存CPU执行计算的流程"></a>2. 带有高速缓存CPU执行计算的流程</h3><ol>
 <li>程序以及数据被加载到主内存</li>
@@ -483,7 +483,7 @@
 <li>高速缓存中的数据写回主内存</li>
 </ol>
 <p>目前流行的多级缓存结构如下图：</p>
-<p><img src="http://static.blinkfox.com/javabf_cpu_02.png" alt="多级缓存结构"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_02.png" alt="多级缓存结构"></p>
 <h2 id="三、CPU缓存一致性协议-MESI"><a href="#三、CPU缓存一致性协议-MESI" class="headerlink" title="三、CPU缓存一致性协议(MESI)"></a>三、CPU缓存一致性协议(MESI)</h2><p><strong>MESI</strong>（<code>Modified Exclusive Shared Or Invalid</code>）(也称为<strong>伊利诺斯协议</strong>，是因为该协议由伊利诺斯州立大学提出的）是一种广泛使用的支持写回策略的缓存一致性协议。为了保证多个CPU缓存中共享数据的一致性，定义了缓存行(Cache Line)的四种状态，而CPU对缓存行的四种操作可能会产生不一致的状态，因此缓存控制器监听到本地操作和远程操作的时候，需要对地址一致的缓存行的状态进行一致性修改，从而保证数据在多个缓存之间保持一致性。</p>
 <h3 id="1-MESI协议中的状态"><a href="#1-MESI协议中的状态" class="headerlink" title="1. MESI协议中的状态"></a>1. MESI协议中的状态</h3><p>CPU中每个缓存行（Caceh line)使用<code>4</code>种状态进行标记，使用<code>2bit</code>来表示:</p>
 <table>
@@ -527,7 +527,7 @@
 </blockquote>
 <p>从上面的意义看来E状态是一种投机性的优化：如果一个CPU想修改一个处于S状态的缓存行，总线事务需要将所有该缓存行的copy变成invalid状态，而修改E状态的缓存不需要使用总线事务。</p>
 <p>MESI状态转换图：</p>
-<p><img src="http://static.blinkfox.com/javabf_cpu_03.png" alt="MESI状态转换图"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_03.png" alt="MESI状态转换图"></p>
 <p>下图表示了当一个缓存行(Cache line)的调整的状态的时候，另外一个缓存行(Cache line)需要调整的状态。</p>
 <table>
 <thead>
@@ -575,13 +575,13 @@
 <p>假设cache 1 中有一个变量<code>x = 0</code>的 Cache line 处于S状态(共享)。<br>那么其他拥有x变量的 cache 2、cache 3 等<code>x</code>的 Cache line调整为<code>S</code>状态（共享）或者调整为<code>I</code>状态（无效）。</p>
 </blockquote>
 <h3 id="2-多核缓存协同操作"><a href="#2-多核缓存协同操作" class="headerlink" title="2. 多核缓存协同操作"></a>2. 多核缓存协同操作</h3><h4 id="1-内存变量"><a href="#1-内存变量" class="headerlink" title="(1) 内存变量"></a>(1) 内存变量</h4><p>假设有三个CPU A、B、C，对应三个缓存分别是cache a、b、c。在主内存中定义了<code>x</code>的引用值为0。</p>
-<p><img src="http://static.blinkfox.com/javabf_cpu_04.png" alt="内存变量"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_04.png" alt="内存变量"></p>
 <h4 id="2-单核读取"><a href="#2-单核读取" class="headerlink" title="(2) 单核读取"></a>(2) 单核读取</h4><p>执行流程是：</p>
 <ul>
 <li>CPU A发出了一条指令，从主内存中读取<code>x</code>。</li>
 <li>从主内存通过 bus 读取到 CPU A 的缓存中（远端读取 Remote read）,这时该 Cache line 修改为 E 状态（独享）。</li>
 </ul>
-<p><img src="http://static.blinkfox.com/javabf_cpu_05.png" alt="单核读取"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_05.png" alt="单核读取"></p>
 <h4 id="3-双核读取"><a href="#3-双核读取" class="headerlink" title="(3) 双核读取"></a>(3) 双核读取</h4><p>执行流程是：</p>
 <ul>
 <li>CPU A发出了一条指令，从主内存中读取<code>x</code>。</li>
@@ -589,21 +589,21 @@
 <li>CPU B发出了一条指令，从主内存中读取<code>x</code>。</li>
 <li>CPU B试图从主内存中读取<code>x</code>时，CPU A检测到了地址冲突。这时CPU A对相关数据做出响应。此时<code>x</code>存储于 cache a 和 cache b 中，<code>x</code>在 chche a 和 cache b 中都被设置为S状态(共享)。</li>
 </ul>
-<p><img src="http://static.blinkfox.com/javabf_cpu_06.png" alt="双核读取"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devopso/javabf_cpu_06.png" alt="双核读取"></p>
 <h4 id="4-修改数据"><a href="#4-修改数据" class="headerlink" title="(4) 修改数据"></a>(4) 修改数据</h4><p>执行流程是：</p>
 <ul>
 <li>CPU A 计算完成后发指令需要修改<code>x</code>.</li>
 <li>CPU A 将<code>x</code>设置为M状态（修改）并通知缓存了<code>x</code>的 CPU B, CPU B 将本地 cache b 中的<code>x</code>设置为<code>I</code>状态(无效)</li>
 <li>CPU A 对<code>x</code>进行赋值。</li>
 </ul>
-<p><img src="http://static.blinkfox.com/javabf_cpu_07.png" alt="修改数据"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_07.png" alt="修改数据"></p>
 <h4 id="5-同步数据"><a href="#5-同步数据" class="headerlink" title="(5) 同步数据"></a>(5) 同步数据</h4><p>那么执行流程是：</p>
 <ul>
 <li>CPU B 发出了要读取x的指令。</li>
 <li>CPU B 通知CPU A,CPU A将修改后的数据同步到主内存时cache a 修改为E（独享）</li>
 <li>CPU A同步CPU B的x,将cache a和同步后cache b中的x设置为S状态（共享）。</li>
 </ul>
-<p><img src="http://static.blinkfox.com/javabf_cpu_08.png" alt="同步数据"></p>
+<p><img src="https://jplibra.gitee.io/graph-bed/content/devops/javabf_cpu_08.png" alt="同步数据"></p>
 <h3 id="3-CPU-存储模型简介"><a href="#3-CPU-存储模型简介" class="headerlink" title="3. CPU 存储模型简介"></a>3. CPU 存储模型简介</h3><p>MESI协议为了保证多个 CPU cache 中共享数据的一致性，定义了 Cache line 的四种状态，而 CPU 对 cache 的<code>4</code>种操作可能会产生不一致状态，因此 cache 控制器监听到本地操作和远程操作的时候，需要对地址一致的 Cache line 状态做出一定的修改，从而保证数据在多个cache之间流转的一致性。</p>
 <p>但是，缓存的一致性消息传递是要时间的，这就使得状态切换会有更多的延迟。某些状态的切换需要特殊的处理，可能会阻塞处理器。这些都将会导致各种各样的稳定性和性能问题。比如你需要修改本地缓存中的一条信息，那么你必须将<code>I</code>（无效）状态通知到其他拥有该缓存数据的CPU缓存中，并且等待确认。等待确认的过程会阻塞处理器，这会降低处理器的性能。因为这个等待远远比一个指令的执行时间长的多。所以，为了为了避免这种阻塞导致时间的浪费，引入了存储缓存(<code>Store Buffer</code>)和无效队列(<code>Invalidate Queue</code>)。</p>
 <h4 id="1-存储缓存"><a href="#1-存储缓存" class="headerlink" title="(1) 存储缓存"></a>(1) 存储缓存</h4><p>在没有存储缓存时，CPU 要写入一个量，有以下情况：</p>
@@ -796,7 +796,7 @@
                 <a href="/2018/11/23/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/hazyfoil/resource/master/images/gitlab-ci-machine.jpg" class="responsive-img" alt="GitLab CI/CD 介绍和使用">
+                        <img src="https://jplibra.gitee.io/graph-bed/images/devops/gitlab-ci-machine.jpg" class="responsive-img" alt="GitLab CI/CD 介绍和使用">
                         
                         <span class="card-title">GitLab CI/CD 介绍和使用</span>
                     </div>
@@ -847,7 +847,7 @@
                 <a href="/2018/11/16/hou-duan/dan-yuan-ce-shi/dan-yuan-ce-shi-zhi-nan/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181115.jpg" class="responsive-img" alt="单元测试指南">
+                        <img src="https://jplibra.gitee.io/graph-bed/images/java/20181115.jpg" class="responsive-img" alt="单元测试指南">
                         
                         <span class="card-title">单元测试指南</span>
                     </div>

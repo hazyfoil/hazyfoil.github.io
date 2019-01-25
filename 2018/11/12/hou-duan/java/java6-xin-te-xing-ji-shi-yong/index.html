@@ -278,7 +278,7 @@ Light-weight">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181111-java.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/java/20181111-java.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -448,7 +448,7 @@ Light-weight">
 </ul>
 </li>
 </ul>
-<h2 id="一、Web-Services-Metadata"><a href="#一、Web-Services-Metadata" class="headerlink" title="一、Web Services Metadata"></a>一、Web Services Metadata</h2><p><code>WebService</code>是一种独立于特定语言、特定平台，基于网络的、分布式的模块化组件。是一个能够使用<code>xml</code>消息通过网络来访问的接口，这个接口描述了一组可访问的操作。在Java6中，在想要发布为<code>WebService</code>的类上加上<code>@WebService</code>的注解，这个类的方法就变为<code>WebService</code>方法了，再通过<code>Endpoint.publish()</code>方法发布这个服务。到此，一个最简单的<code>WebService</code>搞定。运行<code>main</code>方法，在浏览器里输入<code>http://localhost:8080/com.blinkfox.test.Hello?wsdl</code>，即可查看你WebService的WSDL信息。</p>
+<h2 id="一、Web-Services-Metadata"><a href="#一、Web-Services-Metadata" class="headerlink" title="一、Web Services Metadata"></a>一、Web Services Metadata</h2><p><code>WebService</code>是一种独立于特定语言、特定平台，基于网络的、分布式的模块化组件。是一个能够使用<code>xml</code>消息通过网络来访问的接口，这个接口描述了一组可访问的操作。在Java6中，在想要发布为<code>WebService</code>的类上加上<code>@WebService</code>的注解，这个类的方法就变为<code>WebService</code>方法了，再通过<code>Endpoint.publish()</code>方法发布这个服务。到此，一个最简单的<code>WebService</code>搞定。运行<code>main</code>方法，在浏览器里输入<code>http://localhost:8080/com.hazyfoil.test.Hello?wsdl</code>，即可查看你WebService的WSDL信息。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>jws<span class="token punctuation">.</span>WebService<span class="token punctuation">;</span>
 <span class="token keyword">import</span> javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>ws<span class="token punctuation">.</span>Endpoint<span class="token punctuation">;</span>
 
@@ -477,7 +477,7 @@ Light-weight">
      * @param args
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Endpoint<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/com.blinkfox.test.Hello"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Endpoint<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/com.hazyfoil.test.Hello"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"调用成功!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
@@ -941,12 +941,12 @@ Light-weight">
         xmlw<span class="token punctuation">.</span><span class="token function">writeCharacters</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 写入一个catalogs根元素</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeStartElement</span><span class="token punctuation">(</span><span class="token string">"catalogs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        xmlw<span class="token punctuation">.</span><span class="token function">writeNamespace</span><span class="token punctuation">(</span><span class="token string">"myNS"</span><span class="token punctuation">,</span> <span class="token string">"http://blinkfox.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xmlw<span class="token punctuation">.</span><span class="token function">writeNamespace</span><span class="token punctuation">(</span><span class="token string">"myNS"</span><span class="token punctuation">,</span> <span class="token string">"http://hazyfoil.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeAttribute</span><span class="token punctuation">(</span><span class="token string">"owner"</span><span class="token punctuation">,</span><span class="token string">"Chinajash"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeCharacters</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 写入子元素catalog</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeCharacters</span><span class="token punctuation">(</span><span class="token string">"    "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        xmlw<span class="token punctuation">.</span><span class="token function">writeStartElement</span><span class="token punctuation">(</span><span class="token string">"http://blinkfox.com"</span><span class="token punctuation">,</span> <span class="token string">"catalog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        xmlw<span class="token punctuation">.</span><span class="token function">writeStartElement</span><span class="token punctuation">(</span><span class="token string">"http://hazyfoil.com"</span><span class="token punctuation">,</span> <span class="token string">"catalog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeAttribute</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">,</span><span class="token string">"007"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         xmlw<span class="token punctuation">.</span><span class="token function">writeCharacters</span><span class="token punctuation">(</span><span class="token string">"Apparel"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 写入catalog元素的结束标签</span>
@@ -984,7 +984,7 @@ Light-weight">
 <p>产生的<code>output.xml</code>文件如下:</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" ?></span>
 <span class="token comment" spellcheck="true">&lt;!--testing comment--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalogs</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>myNS</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://blinkfox.com<span class="token punctuation">"</span></span> <span class="token attr-name">owner</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Chinajash<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalogs</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>myNS</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://hazyfoil.com<span class="token punctuation">"</span></span> <span class="token attr-name">owner</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Chinajash<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">myNS:</span>catalog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>007<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Apparel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">myNS:</span>catalog</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalogs</span><span class="token punctuation">></span></span>
 </code></pre>
@@ -1553,7 +1553,7 @@ System<span class="token punctuation">.</span><span class="token function">array
                 <a href="/2018/11/12/hou-duan/java/java7-xin-te-xing-ji-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181112-coffee.jpg" class="responsive-img" alt="Java7新特性及使用">
+                        <img src="https://jplibra.gitee.io/graph-bed/images/java/20181112-coffee.jpg" class="responsive-img" alt="Java7新特性及使用">
                         
                         <span class="card-title">Java7新特性及使用</span>
                     </div>
@@ -1603,7 +1603,7 @@ catch多个异常
                 <a href="/2018/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181109-java.jpg" class="responsive-img" alt="Java5新特性及使用">
+                        <img src="https://jplibra.gitee.io/graph-bed/images/java/20181109-java.jpg" class="responsive-img" alt="Java5新特性及使用">
                         
                         <span class="card-title">Java5新特性及使用</span>
                     </div>

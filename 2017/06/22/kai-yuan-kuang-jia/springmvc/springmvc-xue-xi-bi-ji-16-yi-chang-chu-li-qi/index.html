@@ -440,7 +440,7 @@
 </ul>
 <p>前者通过捕获异常从而获取异常信息，后者主要通过规范代码开发、测试通过手段减少运行时异常的发生。</p>
 <p>系统的dao、service、controller出现都通过throws Exception向上抛出，最后由springmvc前端控制器交由异常处理器进行异常处理，如下图：</p>
-<p><img src="https://hazyfoil.github.io/resource/content/images/springMVC/springmvc_异常处理.png" alt="springmvc异常处理"></p>
+<p><img src="/resource/content/images/springMVC/springmvc_异常处理.png" alt="springmvc异常处理"></p>
 <p>springmvc提供全局异常处理器（一个系统只有一个异常处理器）进行统一异常处理。</p>
 <h2 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h2><p>对不同的异常类型定义异常类，继承Exception。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>iot<span class="token punctuation">.</span>learnssm<span class="token punctuation">.</span>firstssm<span class="token punctuation">.</span>exception<span class="token punctuation">;</span>

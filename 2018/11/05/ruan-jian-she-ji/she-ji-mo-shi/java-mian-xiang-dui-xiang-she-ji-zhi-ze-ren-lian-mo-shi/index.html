@@ -273,7 +273,7 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://static.blinkfox.com/20181104-chain.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/designpatterns/20181104-chain.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -436,12 +436,12 @@
 <li><code>ConcreteHandler</code>（具体处理者）：抽象处理者的子类，可以处理用户请求，其实现了抽象处理者中定义的请求处理方法。在具体处理请求时需要进行判断，若其具有相应的处理权限，那么就处理它；否则，其将请求转发给后继者，以便让后面的处理者进行处理。</li>
 </ul>
 <p>在责任链模式里，由每一个请求处理者对象对其下家的引用而连接起来形成一条请求处理链。请求将在这条链上一直传递，直到链上的某一个请求处理者能够处理此请求。<strong>发出这个请求的客户端并不知道链上的哪一个请求处理者将处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织链和分配责任</strong>。</p>
-<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><p><img src="http://static.blinkfox.com/chain_of_responsibility.png" alt="责任链模式UML类图"></p>
+<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><p><img src="https://jplibra.gitee.io/graph-bed/images/content/designpatterns/chain_of_responsibility.png" alt="责任链模式UML类图"></p>
 <h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>首先，责任链模式的核心在于对请求处理者的抽象。在实现过程中，抽象处理者一般会被设定为<strong>抽象类</strong>，其典型实现代码如下所示：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 责任连模式的抽象处理者角色.
  *
- * Created by blinkfox on 16/7/11.
+ * Created by hazyfoil on 16/7/11.
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Handler</span> <span class="token punctuation">{</span>
 
@@ -470,7 +470,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体处理角色1.
  *
- * Created by blinkfox on 16/7/11.
+ * Created by hazyfoil on 16/7/11.
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConcreteHandler1</span> <span class="token keyword">extends</span> <span class="token class-name">Handler</span> <span class="token punctuation">{</span>
 
@@ -495,7 +495,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体处理角色2.
  *
- * Created by blinkfox on 16/7/11.
+ * Created by hazyfoil on 16/7/11.
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConcreteHandler2</span> <span class="token keyword">extends</span> <span class="token class-name">Handler</span> <span class="token punctuation">{</span>
 
@@ -520,7 +520,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体处理角色n.
  *
- * Created by blinkfox on 16/7/11.
+ * Created by hazyfoil on 16/7/11.
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConcreteHandlerN</span> <span class="token keyword">extends</span> <span class="token class-name">Handler</span> <span class="token punctuation">{</span>
 
@@ -541,7 +541,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 责任连模式的客户端场景类.
  *
- * Created by blinkfox on 16/7/11.
+ * Created by hazyfoil on 16/7/11.
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChainClient</span> <span class="token punctuation">{</span>
 
@@ -755,7 +755,7 @@
                 <a href="/2018/11/05/hou-duan/java/java-io-zhi-shi-zheng-li/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/hazyfoil/resource/master/images/20181105-io.jpg" class="responsive-img" alt="Java IO 知识整理">
+                        <img src="https://jplibra.gitee.io/graph-bed/images/java/20181105-io.jpg" class="responsive-img" alt="Java IO 知识整理">
                         
                         <span class="card-title">Java IO 知识整理</span>
                     </div>
