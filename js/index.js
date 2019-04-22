@@ -12,6 +12,7 @@ $(function(){
     var bnTxtEle = $('.banner-txt-box')
 
     //24节气 + 法定节假日
+	//url: http://hackbinimg.luokangyuan.com/banner/jianjunjie.mp4
     var jie_ri = [
 
         {
@@ -527,7 +528,7 @@ function setBannerTxtImg(txt) {
     bnTxtEle.append(tmpBnTxtBox);
     tmpBanner +=
         '<div class="swiper-slide">' +
-        '<video width="100%" muted autoplay loop><source src="http://hackbinimg.luokangyuan.com/banner/' + txt.banner[0] + '" type="video/mp4" onerror="defaultVideo()"></video>' +
+        '<video width="100%" muted autoplay loop><source src="https://jplibra.gitee.io/graph-bed/banner/index/' + txt.banner[0] + '" type="video/mp4" onerror="defaultVideo()"></video>' +
         '</div>'
     bannerListBox.append(tmpBanner);
 }

@@ -1,52 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="长夜有星辰">
+    <meta name="keywords" content="长夜有星辰 hazyfoil IT技术 Spring java">
     <meta name="description" content="长夜有星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>长夜有星辰</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/gif" href="/favicon.gif">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">长夜有星辰</span>
-                    </a>
-                </div>
-                
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">长夜有星辰</span>
+                </a>
+            </div>
+            
 
-<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -104,18 +108,18 @@
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.gif" class="logo-img circle responsive-img">
         
         <div class="logo-name">长夜有星辰</div>
         <div class="logo-desc">
@@ -192,24 +196,8 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
@@ -284,49 +272,257 @@
 	}
 </style>
 
-<div class="bg-cover  about-cover">
-    <div class="banner-top-content container">
-		 
-			<div class="banner-txt-box">
-				
-			</div>
-			<div class="banner-rili-content">
-				
-			</div>
-		
-        
-    </div>
-	
-		<div class="banner">
-			<div class="swiper-container">
-				<div class="swiper-wrapper" id="banner-list-box">
-				  
-				</div>
-			</div>
-		</div>
-	
-</div>
 
-<script>
-// Dynamically switch banner pictures every day.
+	<div class="bg-cover pd-header about-cover">
+    <div class="container">
+		<div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    樹林中的风
+                
+            </div>
 
-</script>
-
-<main class="content">
-
-    
-    <div class="container notice">
-        <div class="card">
-            <div class="card-content">
-                <i class="fa fa-volume-up fa-lg fa-fw text-color"></i>遇事安之若素，做人一生清白
+            <div class="description center-align">
+                
+                    夜空中最亮的星、能否听清、那遥远的人心里的孤独和叹息
+                
             </div>
         </div>
     </div>
-    
-
-    <div id="recommend-sections">
-    
+</div>
+<script>
+// 每天切换 banner 图.  Switch banner image every day.
+$('.bg-cover').css('background-image', 'url(https://jplibra.gitee.io/graph-bed/banner/' + new Date().getMinutes() % 18 + '.jpg)');
+</script>
     </div>
+</div>
+
+
+<main class="content">
+	
+<div id="index-tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;标签云
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/整洁代码/" title="整洁代码: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="整洁代码" style="background-color: #F9EBEA;">整洁代码
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/重构/" title="重构: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="重构" style="background-color: #F5EEF8;">重构
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/测试/" title="测试: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="测试" style="background-color: #D5F5E3;">测试
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 67">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Java" style="background-color: #E8F8F5;">Java
+                        <span class="tag-length">67</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/面向对象编程/" title="面向对象编程: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="面向对象编程" style="background-color: #FEF9E7;">面向对象编程
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/UML/" title="UML: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="UML" style="background-color: #F8F9F9;">UML
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PostgreSQL/" title="PostgreSQL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="PostgreSQL" style="background-color: #82E0AA;">PostgreSQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/数据库/" title="数据库: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="数据库" style="background-color: #D7BDE2;">数据库
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CPU缓存/" title="CPU缓存: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="CPU缓存" style="background-color: #A3E4D7;">CPU缓存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="JavaScript" style="background-color: #85C1E9;">JavaScript
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Guava/" title="Guava: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Guava" style="background-color: #F8C471;">Guava
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MVEL/" title="MVEL: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="MVEL" style="background-color: #F9E79F;">MVEL
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mybatis/" title="mybatis: 19">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="mybatis" style="background-color: #F8C471;">mybatis
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SpringMVC/" title="SpringMVC: 22">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="SpringMVC" style="background-color: #E8F8F5;">SpringMVC
+                        <span class="tag-length">22</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Spring/" title="Spring: 23">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Spring" style="background-color: #F9E79F;">Spring
+                        <span class="tag-length">23</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Git/" title="Git: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Git" style="background-color: #F9E79F;">Git
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Linux/" title="Linux: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Linux" style="background-color: #E8F8F5;">Linux
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/设计模式/" title="设计模式: 14">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Google/" title="Google: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Google" style="background-color: #D7BDE2;">Google
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/设计原则/" title="设计原则: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="设计原则" style="background-color: #FEF9E7;">设计原则
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="css" style="background-color: #82E0AA;">css
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Apache/" title="Apache: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Apache" style="background-color: #82E0AA;">Apache
+                        <span class="tag-length">11</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GitLab-CI/" title="GitLab CI: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="GitLab CI" style="background-color: #85C1E9;">GitLab CI
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DevOps/" title="DevOps: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="DevOps" style="background-color: #F8F9F9;">DevOps
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Jenkins/" title="Jenkins: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Jenkins" style="background-color: #D7BDE2;">Jenkins
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/单元测试/" title="单元测试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="单元测试" style="background-color: #D7BDE2;">单元测试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
 
     
 
@@ -346,8 +542,12 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">本文主要展示如何在intellij IDEA中通过maven构建springmvc+mybatis框架的开发环境。
-需求：使用springm</div>
+                        <div class="summary">
+                            
+                                本文主要展示如何在intellij IDEA中通过maven构建springmvc+mybatis框架的开发环境。
+需求：使用springm
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-12
@@ -393,7 +593,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">通过入门程序理解springmvc前端控制器、处理器映射器、处理器适配器、视图解析器用法。并附上入门程序的非注解的完整的配置文件，注解的完整</div>
+                        <div class="summary">
+                            
+                                通过入门程序理解springmvc前端控制器、处理器映射器、处理器适配器、视图解析器用法。并附上入门程序的非注解的完整的配置文件，注解的完整
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-11
@@ -439,8 +643,12 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">本文主要介绍注解的处理器映射器和适配器相关配置
-默认加载前端控制器从\org\springframework\web\servlet\Dis</div>
+                        <div class="summary">
+                            
+                                本文主要介绍注解的处理器映射器和适配器相关配置
+默认加载前端控制器从\org\springframework\web\servlet\Dis
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-10
@@ -486,10 +694,14 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">本文通过前端控制器源码分析springmvc执行过程
+                        <div class="summary">
+                            
+                                本文通过前端控制器源码分析springmvc执行过程
 1.前端控制器接收请求
 调用doDispatch方法
-protected void d</div>
+protected void d
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-10
@@ -535,9 +747,13 @@ protected void d</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">本文主要介绍非注解的处理器映射器和适配器配置
+                        <div class="summary">
+                            
+                                本文主要介绍非注解的处理器映射器和适配器配置
 非注解的处理器映射器 &lt;!-- 配置Handler -->
-&lt;bean id="i</div>
+&lt;bean id="i
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-06
@@ -583,8 +799,12 @@ protected void d</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">本文主要介绍springmvc的框架原理，并通过一个入门程序展示环境搭建，配置以及部署调试。
-springmvc是spring框架的一个模块</div>
+                        <div class="summary">
+                            
+                                本文主要介绍springmvc的框架原理，并通过一个入门程序展示环境搭建，配置以及部署调试。
+springmvc是spring框架的一个模块
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-06
@@ -631,8 +851,12 @@ springmvc是spring框架的一个模块</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、StringUtils字符串工具类1.1.判断是否空字符串
-isBlank(final CharSequence cs)：判断是空字符串</div>
+                        <div class="summary">
+                            
+                                一、StringUtils字符串工具类1.1.判断是否空字符串
+isBlank(final CharSequence cs)：判断是空字符串
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-04-08
@@ -678,9 +902,13 @@ isBlank(final CharSequence cs)：判断是空字符串</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、MapUtils学习笔记官方文档传送门：MapUtils
+                        <div class="summary">
+                            
+                                一、MapUtils学习笔记官方文档传送门：MapUtils
 本篇笔记的基础示例数据代码如下：
-HashMap&lt;String, Obj</div>
+HashMap&lt;String, Obj
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-04-05
@@ -726,7 +954,11 @@ HashMap&lt;String, Obj</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、apache.Collections-Map学习笔记在Java Collections API中，我们经常会使用到list、map、Co</div>
+                        <div class="summary">
+                            
+                                一、apache.Collections-Map学习笔记在Java Collections API中，我们经常会使用到list、map、Co
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-04-01
@@ -773,7 +1005,11 @@ HashMap&lt;String, Obj</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、CollectionUtils学习笔记1.1.CollectionUtils常用方法集合判空isEmpty(Collection col</div>
+                        <div class="summary">
+                            
+                                一、CollectionUtils学习笔记1.1.CollectionUtils常用方法集合判空isEmpty(Collection col
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-04-01
@@ -819,7 +1055,11 @@ HashMap&lt;String, Obj</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、Apache Commons常用类库1.1.简介Apache Commons包含了很多开源的工具类，用于减少代码的的重复性，其中共包含类</div>
+                        <div class="summary">
+                            
+                                一、Apache Commons常用类库1.1.简介Apache Commons包含了很多开源的工具类，用于减少代码的的重复性，其中共包含类
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-03-28
@@ -865,9 +1105,13 @@ HashMap&lt;String, Obj</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、MultiSet学习笔记首先，我们来假定一个场景，统计一个词在文档中出现了多少次，传统的做法是这样的：。
+                        <div class="summary">
+                            
+                                一、MultiSet学习笔记首先，我们来假定一个场景，统计一个词在文档中出现了多少次，传统的做法是这样的：。
 我们可以这样来实现,
-Map&</div>
+Map&
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2016-03-18
@@ -934,18 +1178,48 @@ Map&</div>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-		树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
-		芳华依然。只要生命还握在手心，人生就没有绝望
+			树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
+			芳华依然。只要生命还握在手心，人生就没有绝望
+			
+				&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+				<span class="white-color">247.5k</span>
+			
+
+			
+			
+				<br>
+				
+				<span id="busuanzi_container_site_pv">
+					<i class="fa fa-heart-o"></i>
+					本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+				</span>
+				
+				
+				<span id="busuanzi_container_site_uv">
+					<i class="fa fa-users"></i>
+					次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+				</span>
+				
+			
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hazyfoil/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=358735461" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
 
 <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
     <i class="fa fa-rss"></i>
@@ -961,8 +1235,8 @@ Map&</div>
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -970,7 +1244,9 @@ Map&</div>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -980,7 +1256,7 @@ Map&</div>
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>

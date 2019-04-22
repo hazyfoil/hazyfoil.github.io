@@ -1,54 +1,58 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="springmvc学习笔记-springmvc整合mybatis之service, 长夜有星辰">
+    <meta name="keywords" content="springmvc学习笔记-springmvc整合mybatis之service, 长夜有星辰 hazyfoil IT技术 Spring java">
     <meta name="description" content="本文记录如何整合service,包括定义spring接口，在spring容器配置service以及事务控制。让spring管理service接口。
 定义service接口public interface ItemsService {
    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>springmvc学习笔记-springmvc整合mybatis之service | 长夜有星辰</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/gif" href="/favicon.gif">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">长夜有星辰</span>
-                    </a>
-                </div>
-                
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">长夜有星辰</span>
+                </a>
+            </div>
+            
 
-<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -106,18 +110,18 @@
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.gif" class="logo-img circle responsive-img">
         
         <div class="logo-name">长夜有星辰</div>
         <div class="logo-desc">
@@ -194,24 +198,8 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
@@ -275,7 +263,7 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/resource/article/images/springMVC/springMVC_7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/resource/article/images/springMVC/springMVC_7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -296,38 +284,17 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1,
-    #articleContent h2,
-    #articleContent h3,
-    #articleContent h4,
-    #articleContent h5,
-    #articleContent h6 {
-        padding-top: 76px;
-        margin-top: -76px;
-    }
-
-    #articleContent h1 {
-        line-height: 3.5rem;
-    }
-
-    #articleContent h2 {
-        line-height: 3.2rem;
-    }
-
-    #articleContent h3 {
-        line-height: 2.8rem;
-    }
-
-    #articleContent h4 {
-        line-height: 2.5rem;
-    }
-
-    #articleContent h5 {
-        line-height: 2.2rem;
-    }
-
-    #articleContent h6 {
-        line-height: 1.9rem;
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
     }
 
     #articleContent :focus {
@@ -389,43 +356,67 @@
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
-            
-            <div class="article-tag">
-                
-                <a href="/tags/SpringMVC/" target="_blank">
-                    <span class="chip bg-color">SpringMVC</span>
-                </a>
-                
-                <a href="/tags/Spring/" target="_blank">
-                    <span class="chip bg-color">Spring</span>
-                </a>
-                
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringMVC/" target="_blank">
+                                <span class="chip bg-color">SpringMVC</span>
+                            </a>
+                        
+                            <a href="/tags/Spring/" target="_blank">
+                                <span class="chip bg-color">Spring</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/开源框架/" class="post-category" target="_blank">
+                                开源框架
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            
-            <div class="post-info">
-                
-                <span class="post-cate">
-                <!--<span class="post-cate" style="margin-right: 0px">-->
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/开源框架/" class="post-category" target="_blank">
-                        开源框架
-                    </a>
-                    
-                </span>
-                
 
-                <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2017-06-14
-                </span>
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-06-14
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        436
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        2 分
+                    </div>
+                    
+                
 				
 				
-                    <span id="busuanzi_container_page_pv" class="post-read">
-                    <i class="fa fa-eye fa-fw"></i>阅读 <span id="busuanzi_value_page_pv"></span>
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
 				
-            </span></div>
+            </div>
         </div>
-        <hr>
+        <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本文记录如何整合service,包括定义spring接口，在spring容器配置service以及事务控制。让spring管理service接口。</p>
@@ -538,6 +529,14 @@
         cursor: pointer;
     }
 
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
     #rewardModal .reward-tabs {
         margin: 0 auto;
         width: 210px;
@@ -547,6 +546,10 @@
         height: 38px;
         margin: 10px auto;
         padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
     }
 
     .reward-tabs .tabs .tab {
@@ -560,17 +563,18 @@
     }
 
     .reward-tabs .tab a:hover {
+        background-color: #ccc;
         color: #fff;
     }
 
     .reward-tabs .wechat-tab .active {
-        color: #fff;
-        background-color: #22AB38;
+        color: #fff !important;
+        background-color: #22AB38 !important;
     }
 
     .reward-tabs .alipay-tab .active {
-        color: #fff;
-        background-color: #019FE8;
+        color: #fff !important;
+        background-color: #019FE8 !important;
     }
 
     .reward-tabs .reward-img {
@@ -580,24 +584,24 @@
 </style>
 
 <div id="reward">
-    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close"><i class="fa fa-close"></i></a>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
             <h4 class="reward-title">你的赏识是我前进的动力</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
-                    <ul class="tabs">
-                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
-                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
                     <div id="alipay">
                         <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -607,13 +611,7 @@
 
 <script>
     $(function () {
-        $('#reward .reward-link').on('click', function () {
-            $('#rewardModal').openModal();
-        });
-
-        $('#rewardModal .close').on('click', function () {
-            $('#rewardModal').closeModal();
-        });
+        $('.tabs').tabs();
     });
 </script>
             
@@ -630,7 +628,9 @@
 
             <div class="reprint">
                 <p>
-                    <span class="reprint-tip">转载请注明: </span>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
                     <a href="https://github.com/hazyfoil" class="b-link-green">长夜有星辰</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/2017/06/14/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-8-springmvc-zheng-he-mybatis-zhi-service/" class="b-link-green">springmvc学习笔记-springmvc整合mybatis之service</a>
@@ -655,7 +655,8 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2017/06/16/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-10-springmvc-zhu-jie-kai-fa-zhi-shang-pin-xiu-gai-gong-neng/">
                     <div class="card-image">
@@ -705,7 +706,9 @@
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2017/06/14/kai-yuan-kuang-jia/springmvc/springmvc-xue-xi-bi-ji-9-springmvc-zheng-he-mybatis-zhi-controller/">
                     <div class="card-image">
@@ -758,10 +761,8 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
     </div>
     <div class="col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title">目录</div>
-            <div id="toc-content">
-
-            </div>
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
@@ -772,6 +773,8 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
             headingSelector: 'h1, h2, h3, h4'
         });
 
@@ -810,18 +813,48 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-		树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
-		芳华依然。只要生命还握在手心，人生就没有绝望
+			树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
+			芳华依然。只要生命还握在手心，人生就没有绝望
+			
+				&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+				<span class="white-color">247.5k</span>
+			
+
+			
+			
+				<br>
+				
+				<span id="busuanzi_container_site_pv">
+					<i class="fa fa-heart-o"></i>
+					本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+				</span>
+				
+				
+				<span id="busuanzi_container_site_uv">
+					<i class="fa fa-users"></i>
+					次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+				</span>
+				
+			
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hazyfoil/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=358735461" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
 
 <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
     <i class="fa fa-rss"></i>
@@ -837,8 +870,8 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -846,7 +879,9 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -856,7 +891,7 @@ springmvc.xml在resources/spring文件下下创建springmvc.xml文件，配置�
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>

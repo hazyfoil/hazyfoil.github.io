@@ -1,52 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 重构, 长夜有星辰">
+    <meta name="keywords" content="标签: 重构, 长夜有星辰 hazyfoil IT技术 Spring java">
     <meta name="description" content="标签: 重构 | 长夜有星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>标签: 重构 | 长夜有星辰</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/gif" href="/favicon.gif">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">长夜有星辰</span>
-                    </a>
-                </div>
-                
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">长夜有星辰</span>
+                </a>
+            </div>
+            
 
-<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -104,18 +108,18 @@
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.gif" class="logo-img circle responsive-img">
         
         <div class="logo-name">长夜有星辰</div>
         <div class="logo-desc">
@@ -192,24 +196,8 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
@@ -269,38 +257,31 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover">
-    <div class="banner-top-content container">
-		
-			<div class="row">
-				<div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-					<div class="brand">
-						<div class="title center-align">
-						
-							樹林中的风
-						
-						</div>
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+		<div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    樹林中的风
+                
+            </div>
 
-						<div class="description center-align">
-						
-							夜空中最亮的星、能否听清、那遥远的人心里的孤独和叹息
-						
-						</div>
-					</div>
-				</div>
-			</div>
-		
-        
+            <div class="description center-align">
+                
+                    夜空中最亮的星、能否听清、那遥远的人心里的孤独和叹息
+                
+            </div>
+        </div>
     </div>
-	
 </div>
-
 <script>
-// Dynamically switch banner pictures every day.
-
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDate() % 13 + '.jpg)');
-
+// 每天切换 banner 图.  Switch banner image every day.
+$('.bg-cover').css('background-image', 'url(https://jplibra.gitee.io/graph-bed/banner/' + new Date().getMinutes() % 18 + '.jpg)');
 </script>
+    </div>
+</div>
 
 <main class="content">
 
@@ -309,29 +290,15 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
 <div id="tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
             <div class="tag-chips">
-                
-                
-                <a href="/tags/Java/" title="Java: 67">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Java" style="background-color: #F9EBEA;">Java
-                        <span class="tag-length">67</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/面向对象编程/" title="面向对象编程: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="面向对象编程" style="background-color: #F5EEF8;">面向对象编程
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
                 
                 
                 <a href="/tags/整洁代码/" title="整洁代码: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="整洁代码" style="background-color: #D5F5E3;">整洁代码
+                             chip-default " data-tagname="整洁代码" style="background-color: #F9EBEA;">整洁代码
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -339,7 +306,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 
                 <a href="/tags/重构/" title="重构: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active " data-tagname="重构" style="background-color: #E8F8F5;">重构
+                             chip-active " data-tagname="重构" style="background-color: #F5EEF8;">重构
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -347,8 +314,24 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 
                 <a href="/tags/测试/" title="测试: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="测试" style="background-color: #FEF9E7;">测试
+                             chip-default " data-tagname="测试" style="background-color: #D5F5E3;">测试
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 67">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Java" style="background-color: #E8F8F5;">Java
+                        <span class="tag-length">67</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/面向对象编程/" title="面向对象编程: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="面向对象编程" style="background-color: #FEF9E7;">面向对象编程
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -393,9 +376,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 </a>
                 
                 
+                <a href="/tags/Guava/" title="Guava: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Guava" style="background-color: #F8C471;">Guava
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/MVEL/" title="MVEL: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="MVEL" style="background-color: #F8C471;">MVEL
+                             chip-default " data-tagname="MVEL" style="background-color: #F9E79F;">MVEL
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -403,16 +394,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 
                 <a href="/tags/mybatis/" title="mybatis: 19">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="mybatis" style="background-color: #F9E79F;">mybatis
+                             chip-default " data-tagname="mybatis" style="background-color: #F8C471;">mybatis
                         <span class="tag-length">19</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Guava/" title="Guava: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Guava" style="background-color: #F9E79F;">Guava
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -433,14 +416,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 </a>
                 
                 
-                <a href="/tags/Linux/" title="Linux: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Linux" style="background-color: #E8F8F5;">Linux
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Git/" title="Git: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="Git" style="background-color: #F9E79F;">Git
@@ -449,18 +424,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 </a>
                 
                 
-                <a href="/tags/设计模式/" title="设计模式: 14">
+                <a href="/tags/Linux/" title="Linux: 4">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
-                        <span class="tag-length">14</span>
+                             chip-default " data-tagname="Linux" style="background-color: #E8F8F5;">Linux
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/css/" title="css: 1">
+                <a href="/tags/设计模式/" title="设计模式: 14">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="css" style="background-color: #82E0AA;">css
-                        <span class="tag-length">1</span>
+                             chip-default " data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
+                        <span class="tag-length">14</span>
                     </span>
                 </a>
                 
@@ -476,6 +451,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
                 <a href="/tags/设计原则/" title="设计原则: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default " data-tagname="设计原则" style="background-color: #FEF9E7;">设计原则
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="css" style="background-color: #82E0AA;">css
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -525,95 +508,123 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
     </div>
 </div>
 
-    <div class="container">
-        
+    
 
-        <article>
-            <div class="row tags-posts">
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="整洁代码, 重构, 测试" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/10/16/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/">
-                            <div class="card-image tag-image">
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="整洁代码, 重构, 测试" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2018/10/16/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://jplibra.gitee.io/graph-bed/images/java/20181015_code.jpg" class="responsive-img" alt="代码整洁之道内容概要">
+                            
+                            <span class="card-title">代码整洁之道内容概要</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
+                            </span>
+                            <span class="publish-author">
                                 
-                                <img src="https://jplibra.gitee.io/graph-bed/images/java/20181015_code.jpg" class="responsive-img" alt="代码整洁之道内容概要">
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <span class="card-title">代码整洁之道内容概要</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/编程之道/" class="post-category" target="_blank">
-                                    编程之道
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
+                                <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                编程之道
+                                </a>
+                                
+                                
+                            </span>
                         </div>
                     </div>
                 </div>
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="整洁代码, 重构, 测试" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/10/16/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-xue-xi-bi-ji/">
-                            <div class="card-image tag-image">
-                                
-                                <img src="/resource/article/images/common/coding.jpg" class="responsive-img" alt="代码整洁之道学习笔记">
-                                
-                                <span class="card-title">代码整洁之道学习笔记</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/编程之道/" class="post-category" target="_blank">
-                                    编程之道
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-        </article>
-    </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="整洁代码, 重构, 测试" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2018/10/16/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-xue-xi-bi-ji/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/resource/article/images/common/coding.jpg" class="responsive-img" alt="代码整洁之道学习笔记">
+                            
+                            <span class="card-title">代码整洁之道学习笔记</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                编程之道
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
 
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-		树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
-		芳华依然。只要生命还握在手心，人生就没有绝望
+			树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
+			芳华依然。只要生命还握在手心，人生就没有绝望
+			
+				&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+				<span class="white-color">247.5k</span>
+			
+
+			
+			
+				<br>
+				
+				<span id="busuanzi_container_site_pv">
+					<i class="fa fa-heart-o"></i>
+					本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+				</span>
+				
+				
+				<span id="busuanzi_container_site_uv">
+					<i class="fa fa-users"></i>
+					次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+				</span>
+				
+			
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hazyfoil/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=358735461" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
 
 <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
     <i class="fa fa-rss"></i>
@@ -629,8 +640,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -638,7 +649,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -648,7 +661,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDat
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>

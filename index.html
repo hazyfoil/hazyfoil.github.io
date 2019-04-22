@@ -1,52 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="长夜有星辰">
+    <meta name="keywords" content="长夜有星辰 hazyfoil IT技术 Spring java">
     <meta name="description" content="长夜有星辰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>长夜有星辰</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/gif" href="/favicon.gif">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">长夜有星辰</span>
-                    </a>
-                </div>
-                
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">长夜有星辰</span>
+                </a>
+            </div>
+            
 
-<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -104,18 +108,18 @@
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.gif" class="logo-img circle responsive-img">
         
         <div class="logo-name">长夜有星辰</div>
         <div class="logo-desc">
@@ -192,24 +196,8 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
@@ -284,50 +272,54 @@
 	}
 </style>
 
-<div class="bg-cover index-cover about-cover">
-    <div class="banner-top-content container">
-		 
-			<div class="banner-txt-box">
-				
-			</div>
-			<div class="banner-rili-content">
-				
-			</div>
-		
-        
-        <div class="cover-btns">
-            <a href="#recommend-sections" class="waves-effect waves-light btn">
-                <i class="fa fa-angle-double-down"></i>继续阅读
-            </a>
 
-            
-            <a href="http://www.google.cn/maps" class="waves-effect waves-light btn" target="_blank">
-                <i class="fa fa-map-marker"></i>Google地图
-            </a>
-            
-			
-            <a href="https://hazyfoil.github.io/notes" class="waves-effect waves-light btn" target="_blank">
-                <i class="fa fa-plane"></i>笔记传送门
-            </a>
-            
-        </div>
-        <div class="cover-social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+	<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
 
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
-        
-    </div>
-	
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
+
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color:rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    
+
+    <div class="carousel-item red white-text bg-cover about-cover">
 		<div class="banner">
 			<div class="swiper-container">
 				<div class="swiper-wrapper" id="banner-list-box">
@@ -335,112 +327,487 @@
 				</div>
 			</div>
 		</div>
-	
+        <div class="banner-top-content container">
+            <div class="banner-txt-box">
+			</div>
+			<div class="banner-rili-content">	
+			</div>
+			
+				
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+	<div id="aplayer" class="music"></div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'none',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '100px',
+        audio: JSON.parse('[{"name":"樱花树下的约定","artist":"Snigellin","url":"https://jplibra.gitee.io/graph-bed/music/Snigellin.mp3","cover":"https://jplibra.gitee.io/graph-bed/images/music/Snigellin.png"},{"name":"PLANET(中文版)","artist":"PLANET","url":"https://jplibra.gitee.io/graph-bed/music/PLANET.mp3","cover":"https://jplibra.gitee.io/graph-bed/images/music/PLANET.png"},{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"https://jplibra.gitee.io/graph-bed/music/music1.mp3","cover":"https://jplibra.gitee.io/graph-bed/images/music/music-cover1.png"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"https://jplibra.gitee.io/graph-bed/music/music2.mp3","cover":"https://jplibra.gitee.io/graph-bed/images/music/music-cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"https://jplibra.gitee.io/graph-bed/music/music3.mp3","cover":"https://jplibra.gitee.io/graph-bed/images/music/music-cover3.png"}]')
+    });
+});
+</script>
+			
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+					<a href="http://www.google.cn/maps" class="waves-effect waves-light btn" target="_blank">
+						<i class="fa fa-map-marker"></i>Google地图
+					</a>
+                
+				
+					<a href="https://hazyfoil.github.io/notes" class="waves-effect waves-light btn" target="_blank">
+						<i class="fa fa-plane"></i>笔记传送门
+					</a>
+				
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/hazyfoil/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=358735461" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+        </div>
+    </div>
+    
 </div>
 
 <script>
-// Dynamically switch banner pictures every day.
+$(function () {
+    let coverSlider = $('.carousel');
+    coverSlider.carousel({
+        duration: Number('120'),
+        fullWidth: true,
+        indicators: 'true' === 'true'
+    });
 
+    let carouselIntervalId;
+    
+    // Loop to call the next cover article picture.
+    let autoCarousel = function() {
+        carouselIntervalId = setInterval(function () {
+            coverSlider.carousel('next');
+        }, 5000);
+    };
+    autoCarousel();
+    
+
+    let restartPlay = function () {
+        
+        clearInterval(carouselIntervalId);
+        autoCarousel();
+        
+    };
+
+    
+    // prev and next cover post.
+    $('#prev-cover').click(function () {
+        coverSlider.carousel('prev');
+        restartPlay();
+    });
+    $('#next-cover').click(function () {
+        coverSlider.carousel('next');
+        restartPlay();
+    });
+    
+});
 </script>
 
+
+
 <main class="content">
-
-    
-    <div class="container notice">
-        <div class="card">
-            <div class="card-content">
-                <i class="fa fa-volume-up fa-lg fa-fw text-color"></i>遇事安之若素，做人一生清白
-            </div>
-        </div>
-    </div>
-    
-
-    <div id="recommend-sections">
-    
-    
-
-
-
-<div class="container recommend">
+	
+<div id="index-tags" class="container chip-container">
     <div class="card">
         <div class="card-content">
-            
-            <div class="title">推荐文章</div>
-            
-            <div class="row">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;标签云
+            </div>
+            <div class="tag-chips">
                 
                 
-                
-                <div class="col s12">
-                    <div class="post-card" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/devops/20181124-design.jpg')">
-                        <div class="post-body">
-                            <div class="post-categories">
-                                
-                                <a href="/categories/软件设计/" class="category" target="_blank">软件设计</a>
-                                
-                            </div>
-                            <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/" target="_blank">
-                                <h3 class="post-title">软件程序设计原则</h3>
-                            </a>
-                            <p class="post-description">一、前言软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程原则和模式中受益。
-软件设计原则是一组帮助我们避开不良设计的指导方针。根据Robert Martin</p>
-                            <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
-                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <a href="/tags/整洁代码/" title="整洁代码: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="整洁代码" style="background-color: #F9EBEA;">整洁代码
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
                 
                 
-                <div class="col s12 m6" data-aos="zoom-in-up">
-                    <div class="post-card" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/devops/gitlab-ci-machine.jpg')">
-                        <div class="post-body">
-                            <div class="post-categories">
-                                
-                                <a href="/categories/软件工具/" class="category" target="_blank">软件工具</a>
-                                
-                            </div>
-                            <a href="/2018/11/23/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" target="_blank">
-                                <h3 class="post-title">GitLab CI/CD 介绍和使用</h3>
-                            </a>
-                            <p class="post-description">一、持续集成介绍
-持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集</p>
-                            <a href="/2018/11/23/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
-                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <a href="/tags/重构/" title="重构: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="重构" style="background-color: #F5EEF8;">重构
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
                 
                 
-                <div class="col s12 m6" data-aos="zoom-in-up">
-                    <div class="post-card" style="background-image: url('/resource/article/images/Javase/java8.jpg')">
-                        <div class="post-body">
-                            <div class="post-categories">
-                                
-                                <a href="/categories/后端/" class="category" target="_blank">后端</a>
-                                
-                            </div>
-                            <a href="/2018/12/12/hou-duan/java/java8-xin-te-xing-xue-xi-zong-jie/" target="_blank">
-                                <h3 class="post-title">Java8新特性学习总结</h3>
-                            </a>
-                            <p class="post-description">lambda表达式在Java8中引入了一个新的操作符“-&gt;”,该操作符称为箭头操作符或Lambda操作符。左侧：Lambda表示式的参</p>
-                            <a href="/2018/12/12/hou-duan/java/java8-xin-te-xing-xue-xi-zong-jie/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
-                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <a href="/tags/测试/" title="测试: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="测试" style="background-color: #D5F5E3;">测试
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
                 
+                
+                <a href="/tags/Java/" title="Java: 67">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Java" style="background-color: #E8F8F5;">Java
+                        <span class="tag-length">67</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/面向对象编程/" title="面向对象编程: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="面向对象编程" style="background-color: #FEF9E7;">面向对象编程
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/UML/" title="UML: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="UML" style="background-color: #F8F9F9;">UML
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PostgreSQL/" title="PostgreSQL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="PostgreSQL" style="background-color: #82E0AA;">PostgreSQL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/数据库/" title="数据库: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="数据库" style="background-color: #D7BDE2;">数据库
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CPU缓存/" title="CPU缓存: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="CPU缓存" style="background-color: #A3E4D7;">CPU缓存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="JavaScript" style="background-color: #85C1E9;">JavaScript
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Guava/" title="Guava: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Guava" style="background-color: #F8C471;">Guava
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MVEL/" title="MVEL: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="MVEL" style="background-color: #F9E79F;">MVEL
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mybatis/" title="mybatis: 19">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="mybatis" style="background-color: #F8C471;">mybatis
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SpringMVC/" title="SpringMVC: 22">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="SpringMVC" style="background-color: #E8F8F5;">SpringMVC
+                        <span class="tag-length">22</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Spring/" title="Spring: 23">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Spring" style="background-color: #F9E79F;">Spring
+                        <span class="tag-length">23</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Git/" title="Git: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Git" style="background-color: #F9E79F;">Git
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Linux/" title="Linux: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Linux" style="background-color: #E8F8F5;">Linux
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/设计模式/" title="设计模式: 14">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Google/" title="Google: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Google" style="background-color: #D7BDE2;">Google
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/设计原则/" title="设计原则: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="设计原则" style="background-color: #FEF9E7;">设计原则
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="css" style="background-color: #82E0AA;">css
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Apache/" title="Apache: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Apache" style="background-color: #82E0AA;">Apache
+                        <span class="tag-length">11</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GitLab-CI/" title="GitLab CI: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="GitLab CI" style="background-color: #85C1E9;">GitLab CI
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DevOps/" title="DevOps: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="DevOps" style="background-color: #F8F9F9;">DevOps
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Jenkins/" title="Jenkins: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Jenkins" style="background-color: #D7BDE2;">Jenkins
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/单元测试/" title="单元测试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="单元测试" style="background-color: #D7BDE2;">单元测试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
     </div>
 </div>
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <div class="dream">
+    
+    <div class="title center-align">
+        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;我
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            遇事安之若素，做人一生清白
+        </div>
+    </div>
+</div>
+                    
 
+                    
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-video-camera"></i>&nbsp;&nbsp;精彩视频
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+                pic: '',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
+                    
+
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+
+
+<div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
 
     
+    
+    <div class="col s12">
+        <div class="post-card" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/devops/20181124-design.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/软件设计/" class="category" target="_blank">软件设计</a>
+                    
+                </div>
+                <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/" target="_blank">
+                    <h3 class="post-title">软件程序设计原则</h3>
+                </a>
+                <p class="post-description">一、前言软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程原则和模式中受益。
+软件设计原</p>
+                <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
     </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('https://jplibra.gitee.io/graph-bed/images/devops/gitlab-ci-machine.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/软件工具/" class="category" target="_blank">软件工具</a>
+                    
+                </div>
+                <a href="/2018/11/23/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" target="_blank">
+                    <h3 class="post-title">GitLab CI/CD 介绍和使用</h3>
+                </a>
+                <p class="post-description">一、持续集成介绍
+持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集</p>
+                <a href="/2018/11/23/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/resource/article/images/Javase/java8.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/后端/" class="category" target="_blank">后端</a>
+                    
+                </div>
+                <a href="/2018/12/12/hou-duan/java/java8-xin-te-xing-xue-xi-zong-jie/" target="_blank">
+                    <h3 class="post-title">Java8新特性学习总结</h3>
+                </a>
+                <p class="post-description">lambda表达式在Java8中引入了一个新的操作符“-&gt;”,该操作符称为箭头操作符或Lambda操作符。左侧：Lambda表示式的参</p>
+                <a href="/2018/12/12/hou-duan/java/java8-xin-te-xing-xue-xi-zong-jie/" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     
 
@@ -460,7 +827,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少</div>
+                        <div class="summary">
+                            
+                                模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-19
@@ -506,9 +877,13 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">模式动机
+                        <div class="summary">
+                            
+                                模式动机
 在软件开发中采用类似于电源适配器的设计和编码技巧被称为适配器模式。
-通常情况下，客户端可以通过目标类的接口访问它所提供的服务。有时</div>
+通常情况下，客户端可以通过目标类的接口访问它所提供的服务。有时
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-12
@@ -554,7 +929,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">lambda表达式在Java8中引入了一个新的操作符“-&gt;”,该操作符称为箭头操作符或Lambda操作符。左侧：Lambda表示式的参</div>
+                        <div class="summary">
+                            
+                                lambda表达式在Java8中引入了一个新的操作符“-&gt;”,该操作符称为箭头操作符或Lambda操作符。左侧：Lambda表示式的参
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-11
@@ -596,7 +975,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、前言软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程</div>
+                        <div class="summary">
+                            
+                                一、前言软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-24
@@ -646,8 +1029,12 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、持续集成介绍
-持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集</div>
+                        <div class="summary">
+                            
+                                一、持续集成介绍
+持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
@@ -697,7 +1084,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、什么是CPU缓存1. CPU缓存的来历众所周知,CPU是计算机的大脑，它负责执行程序的指令，而内存负责存数据, 包括程序自身的数据。在很</div>
+                        <div class="summary">
+                            
+                                一、什么是CPU缓存1. CPU缓存的来历众所周知,CPU是计算机的大脑，它负责执行程序的指令，而内存负责存数据, 包括程序自身的数据。在很
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
@@ -739,7 +1130,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">一、必要性在我们公司中要做单元测试，确实比较难，因为公司缺少这种氛围，有也只是局部的，大多数工程师没有这方面的习惯和素养，很多人都是有一定的</div>
+                        <div class="summary">
+                            
+                                一、必要性在我们公司中要做单元测试，确实比较难，因为公司缺少这种氛围，有也只是局部的，大多数工程师没有这方面的习惯和素养，很多人都是有一定的
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-15
@@ -785,7 +1180,11 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">扩展注解的支持Java 8扩展了注解的上下文。现在几乎可以为任何东西添加注解：局部变量、泛型类、父类与接口的实现，就连方法的异常也能添加注解</div>
+                        <div class="summary">
+                            
+                                扩展注解的支持Java 8扩展了注解的上下文。现在几乎可以为任何东西添加注解：局部变量、泛型类、父类与接口的实现，就连方法的异常也能添加注解
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
@@ -827,10 +1226,14 @@
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">新特性列表以下是Java8中的引入的部分新特性。关于Java8新特性更详细的介绍可参考这里。
+                        <div class="summary">
+                            
+                                新特性列表以下是Java8中的引入的部分新特性。关于Java8新特性更详细的介绍可参考这里。
 
 接口默认方法和静态方法
-Lambda 表达式</div>
+Lambda 表达式
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-13
@@ -872,10 +1275,14 @@ Lambda 表达式</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">新特性列表以下是Java7中的引入的部分新特性。关于Java7更详细的介绍可参考这里。
+                        <div class="summary">
+                            
+                                新特性列表以下是Java7中的引入的部分新特性。关于Java7更详细的介绍可参考这里。
 
 switch支持String
-try-with-r</div>
+try-with-r
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-12
@@ -917,9 +1324,13 @@ try-with-r</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">新特性列表以下是Java6中的引入的部分新特性，相比Java5的新特性就少了很多了。关于Java6更详细的介绍可参考这里。
+                        <div class="summary">
+                            
+                                新特性列表以下是Java6中的引入的部分新特性，相比Java5的新特性就少了很多了。关于Java6更详细的介绍可参考这里。
 
-Web Ser</div>
+Web Ser
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
@@ -961,10 +1372,14 @@ Web Ser</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">新特性列表以下是Java5中的引入的部分新特性，关于更详细的新特性了解，可参考这里。
+                        <div class="summary">
+                            
+                                新特性列表以下是Java5中的引入的部分新特性，关于更详细的新特性了解，可参考这里。
 
 泛型(Generics)
-增强for循环(Enhan</div>
+增强for循环(Enhan
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-09
@@ -1027,18 +1442,48 @@ Web Ser</div>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-		树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
-		芳华依然。只要生命还握在手心，人生就没有绝望
+			树，在秋天放下了落叶，心很疼，可是整个冬天，它让心在平静中积蓄力量。春天一到，
+			芳华依然。只要生命还握在手心，人生就没有绝望
+			
+				&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+				<span class="white-color">247.5k</span>
+			
+
+			
+			
+				<br>
+				
+				<span id="busuanzi_container_site_pv">
+					<i class="fa fa-heart-o"></i>
+					本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+				</span>
+				
+				
+				<span id="busuanzi_container_site_uv">
+					<i class="fa fa-users"></i>
+					次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+				</span>
+				
+			
         </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/hazyfoil" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hazyfoil/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jpzhangi@sina.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=358735461" class="tooltipped" data-tooltip="QQ联系我: 358735461" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
 
 <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
     <i class="fa fa-rss"></i>
@@ -1054,8 +1499,8 @@ Web Ser</div>
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1063,7 +1508,9 @@ Web Ser</div>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -1073,7 +1520,7 @@ Web Ser</div>
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>

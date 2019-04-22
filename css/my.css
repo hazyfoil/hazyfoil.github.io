@@ -1,4 +1,7 @@
 /* Here is your custom css styles. */
+pre {
+    background-color: #263238 !important;
+}
 @keyframes toRight {
   from {
     opacity: 0;
@@ -37,7 +40,7 @@
     background-size: 100%;
   }
 }
-body,div,video {
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -57,6 +60,23 @@ audio, canvas, iframe, img, svg, video {
     background-size: 10%;
     background-position: center;
 }
+
+#index-tags{
+	margin-top: -90px;
+	width: 95%;
+	height: 340px;
+	margin-bottom: 40px;
+	background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+}
+
+#index-tags .card{
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#index-tags .tag-title{
+	color: #fff;
+}
+
 .banner .swiper-container .swiper-wrapper .swiper-slide > img {
   animation: toSmall 2s ease-out;
   width: 100%;
@@ -107,7 +127,7 @@ audio, canvas, iframe, img, svg, video {
 
 .banner-top-content .banner-txt-box {
   cursor: pointer;
-  width: calc(100% - 320px);
+  width: calc(100% - 420px);
   height: 300px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.3);
@@ -148,10 +168,14 @@ audio, canvas, iframe, img, svg, video {
   color: #fff;
   transform: scale(1.02) translateY(-5px);
 }
+
+.banner-rili-content {
+	top: -110px;
+}
+
 .banner-top-content .banner-rili-content{
   position: absolute;
   right: 0;
-  bottom: 0;
   width: 300px;
   height: 180px;
   padding: 25px 40px 15px 0;
@@ -164,6 +188,20 @@ audio, canvas, iframe, img, svg, video {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
   animation: toLeft 0.7s;
 }
+
+.banner-top-content .music-player{
+	position: absolute;
+}
+
+.music-player {
+	right: -5px;
+	width: 400px;
+	top: 65px;
+	color: #34495e;
+	text-align: left;
+	font-size: 12px;
+}
+
 .index-cover .banner-rili-content {
   bottom: 110px;
 }
@@ -194,7 +232,7 @@ audio, canvas, iframe, img, svg, video {
   margin-top: 15px;
 }
 .banner-top-content .banner-rili-content .guoli-box .year-month .guoli-year {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .index-article-box {
   width: 100%;
